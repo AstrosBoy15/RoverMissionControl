@@ -22,13 +22,14 @@ public class Word {
 		List<Character> tempWord = new ArrayList<Character>();
 		List<Word> words = new ArrayList<Word>();
 		for(int i = 0; i < chars.length; i++) {
-			if(chars[i] == ' ' || i == chars.length-1) {
+			if(chars[i] == ' ') {
 				words.add(new Word(tempWord));
 				tempWord.clear();
 			} else {
 				tempWord.add(chars[i]);
 			}
 		}
+		words.add(new Word(tempWord));
 		return words;
 	}
 	
